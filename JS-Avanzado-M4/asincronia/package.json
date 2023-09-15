@@ -1,0 +1,14 @@
+{
+  "name": "asincronia",
+  "version": "1.0.0",
+  "description": "",
+  "main": "asincronia.js",
+  "type": "module",
+  "scripts": {
+    "start": "echo \"Aquí pondría un Scrip de ejecución de producción, si existiera\" && exit 1",
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Erik Hernandez",
+  "license": "ISC"
+}
