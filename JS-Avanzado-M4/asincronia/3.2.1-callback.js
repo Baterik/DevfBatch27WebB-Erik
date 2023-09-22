@@ -5,19 +5,19 @@ class Callback{
         console.log("========== BLOQUE 3==========");
 
         const showSuccessMesage = ()=>{
-            console.log("Proceso 3: compra exitosa");
+            console.log("Proceso 3 de 3: compra exitosa");
         }
 
         const validatePaymentCallback = (showSuccessMesage) =>{
             setTimeout(()=>{
-                console.log("Proceso 2: validando tarjeta de credito");
+                console.log("Proceso 2 de 3: validando tarjeta de credito");
                 showSuccessMesage();
             }, 1000)
         }
 
-        console.log("Proceso1: Presiona el boton de compra");
+        console.log("Proceso1 de 3: Presiona el boton de compra");
         validatePaymentCallback(showSuccessMesage);
-        console.log("Proceso 4: Notificación de mi amix");
+        console.log("Proceso 4 de 3: Notificación de mi amix");
     }
 }
 
