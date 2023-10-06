@@ -13,15 +13,58 @@ function loadUsers() {
         data.forEach(user => {
             const li = document.createElement("li")
             li.innerHTML = `
-                <strong>${user.name}</strong> (${user.email})
+                <strong>${user.name}</strong> <p>${user.email}</p>
                 <button data-id="${user._id}" class="btn btn-edit">Editar</button>
                 <button data-id="${user._id}" class="btn btn-delete">Eliminar</button>
             `
             userList.appendChild(li)
-        })
+        });
     })
 }
 
+//*Alta de usuarios
+crudForm.addEventListener("submit", function (event) {
+    event.preventDefault()
+
+    const newUser = {
+        name: nameInput.value,
+        email:emailInput.value
+    }
+    
+    fetch(apiURL, {
+        method: "POST",
+        body:JSON.stringify( //convierte la info en formato JSON para enviarlo al servidor
+            newUser
+        ),
+        headers:{
+            "Content-Type" :"application/json"
+        }
+    }).then(() => {
+        nameInput.value = ""
+        emailInput.value =""
+        loadUsers()
+    })
+})
+
+userList.addEventListener("click", function (event) {
+    //Edición de un usuario
+    if (event.target.classList.contains("btn-edit")) {
+        const userId = event.target.getAttribute("data-id") //id del usuario a editar
+        const editedUser = prompt("Editar nombre:")
+        if (editedUser !== null) {
+            fetch(`${apiURL}/${userId}`,{
+            method:"PUT",
+            body:JSON.stringify({name: editedUser, email: event.target.parentElement.querySelector("p").textContent }),
+            headers:{
+                "Content-Type" :"appication/json"
+            }
+        })
+        .then(() =>{
+            loadUsers()
+        })
+    }
+    }
+})
 
 document.addEventListener("DOMContentLoaded", function(){
     loadUsers()
