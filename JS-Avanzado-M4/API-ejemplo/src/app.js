@@ -12,7 +12,8 @@ app.set("port",4000);
 app.use(morgan("dev"));
 app.use(express.json());
 
-/**importamos nuestras rutas de la API (endpoint) de la base de datos products.routes */
-app.use("api-restful/products", productRoutes);
+/** Importamos nuestras rutas de la API (endpoints) de products.routes */
+/** http://127.0.0.1:4000/api-restful/products */
+app.use("/api-restful/products", productRoutes);
 
 export default app;
