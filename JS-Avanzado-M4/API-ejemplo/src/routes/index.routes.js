@@ -3,8 +3,16 @@ import { methods as productController } from "../controllers/product.controller"
 
 const router = Router()
 
-//Uri inicial es http://127.0.0.1:4000/api-restful/products
-/**Creamos nuestras rutas */
-router.get("/allProducts", productController.getAllProducts); // GET http://127.0.0.1:4000/api-restful/products/allProducts
+// Uri inicial es http://127.0.0.1:4000/api-restful/products
 
+/** Creamos nuestras rutas */
+router.get("/allProducts", productController.getAllProducts); // GET http://127.0.0.1:4000/api-restful/products/allProducts
+//C create
+router.post("/newProduct", productController.postProduct); // POST http://127.0.0.1:4000/api-restful/products/newProduct
+//R read
+router.get("/productBySKU/:sku", productController.getProductBySku); // GET http://127.0.0.1:4000/api-restful/products/productBySKU/:
+//U update
+router.put("/updateBySKU/:sku", productController.updateProduct); // PUT http://127.0.0.1:4000/api-restful/products/updateBySKU/:
 export default router;
+//D delete 
+router.delete("/deleteBySKU/:sku",productController.deleteProductBySku);// DELETE http://127.0.0.1:4000/api-restful/products/deleteBySKU/:
