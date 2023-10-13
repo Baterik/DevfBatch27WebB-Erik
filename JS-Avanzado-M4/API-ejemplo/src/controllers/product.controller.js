@@ -16,6 +16,8 @@ const postProduct = async(req, res) =>{
         const {sku, name, description, price, url_image} = req.body;
         console.log("nuevo producto Controlador");
         const query= await productServices.createProduct(sku,name,description,price,url_image,res)
+        console.log(query);
+        return query
     } catch (error){
         res.status(400);
         res.send(error.message);
