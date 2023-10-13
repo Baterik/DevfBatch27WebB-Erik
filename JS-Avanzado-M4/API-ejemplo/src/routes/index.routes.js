@@ -6,13 +6,13 @@ const router = Router()
 // Uri inicial es http://127.0.0.1:4000/api-restful/products
 
 /** Creamos nuestras rutas */
-router.get("/allProducts", productController.getAllProducts); // GET http://127.0.0.1:4000/api-restful/products/allProducts
+router.get("/allProducts", productController.getAllProducts); // GET http://127.0.0.1:5000/api-restful/products/allProducts
 //C create
-router.post("/newProduct", productController.postProduct); // POST http://127.0.0.1:4000/api-restful/products/newProduct
+router.post("/newProduct", productController.postProduct); // POST http://127.0.0.1:5000/api-restful/products/newProduct
 //R read
-router.get("/productBySKU/:sku", productController.getProductBySku); // GET http://127.0.0.1:4000/api-restful/products/productBySKU/:
+router.get("/productBySKU/:sku", productController.getProductBySku); // GET http://127.0.0.1:5000/api-restful/products/productBySKU/:
 //U update
-router.put("/updateBySKU/:sku", productController.updateProduct); // PUT http://127.0.0.1:4000/api-restful/products/updateBySKU/:
+router.put("/updateBySKU/:sku", productController.updateProduct); // PUT http://127.0.0.1:5000/api-restful/products/updateBySKU/:
 export default router;
 //D delete 
-router.delete("/deleteBySKU/:sku",productController.deleteProductBySku);// DELETE http://127.0.0.1:4000/api-restful/products/deleteBySKU/:
+router.delete("/deleteBySKU/:sku",productController.deleteProductBySku);// DELETE http://127.0.0.1:5000/api-restful/products/deleteBySKU/:
